@@ -1,0 +1,16 @@
+package com.jhakaas.DAOIMPL;
+
+import com.jhakaas.DAO.CategoryDAO;
+import com.jhakaas.model.Category;
+
+public class CategoryDaoImpl implements CategoryDAO {
+
+	@Override
+	public boolean insert_Category(Category d)
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+
+}

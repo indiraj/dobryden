@@ -1,0 +1,11 @@
+package com.jhakaas.DAO;
+
+import org.springframework.stereotype.Service;
+
+import com.jhakaas.model.SellerDetails;
+
+@Service
+public interface SellerDAO
+{
+	public boolean insert_Seller(SellerDetails d);
+}

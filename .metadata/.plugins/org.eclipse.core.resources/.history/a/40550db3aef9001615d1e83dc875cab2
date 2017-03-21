@@ -1,0 +1,32 @@
+package com.jhakaas.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.jhakaas.DAO.CategoryDAO;
+import com.jhakaas.model.Category;
+
+@Controller
+public class CategoryController 
+{
+	@Autowired
+	CategoryDAO sdao;
+	
+	@RequestMapping("/seller")
+	public ModelAndView sinuppage()
+	{
+		ModelAndView mv=new ModelAndView("SellerRegistration","addsell",new Category());
+		return mv;
+	}
+
+	@RequestMapping(value="/Category",method = RequestMethod.POST)
+	public String sinuppage(@ModelAttribute("addsell")Category d)
+	{
+		sdao.insert_Category(d);
+		return "login";
+	}
+}
